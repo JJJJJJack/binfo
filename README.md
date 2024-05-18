@@ -6,3 +6,4 @@ In order to maintain code quality and readability through the whole project stru
 2. When creating a new `BinaryManager` Template, create it in its own, explicitly named, `.hpp` file, into the `include` folder; so that the template classes are easily separated and not keen to confusion.
 3. Use explicit and non-vague types: don't use `int` or such, use int32_t instead
 4. If a structure uses `DWORD` for a field type, use `DWORD` for related values, same for other "original" typedefs
+5. Use of `using namespace ...` is **discouraged** as we are wrapping standard functions in our own namespaces
