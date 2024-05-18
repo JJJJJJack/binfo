@@ -1,5 +1,8 @@
 # WIP
 
+# binfo infos
+This is intended to distribute an executable (`main.cpp`) and its own library (`src`), the library will be a Modular/OOP static portable library with **NO OS DEPENDENT CODE**, although we use their own `typedefs` as much as we can to better let the compiler and the developer be aligned to what is happening in the memory.
+
 ## Pull Requests instructions
 In order to maintain code quality and readability through the whole project structure, it is needed to follow a couple guidelines for classes code:
 1. Keep the portability at its best! Each structure is taken directly from official header files from their own executable structures and included in their own `wrapper headers` (I.E. `winstructs.h` & `wintypes.h` for windows and `linuxstructs.h` & `linuxtypes.h` for linux etc...)
