@@ -3,7 +3,7 @@
 
 #include <cstdint>
 
-#define __LONG32 long
+#define __LONG32 int32_t
 
 typedef char CHAR;
 typedef short SHORT;
@@ -11,7 +11,7 @@ typedef __LONG32 LONG;
 typedef int INT;
 typedef unsigned char BYTE;
 typedef unsigned short WORD;
-typedef unsigned __LONG32 DWORD;
+typedef uint32_t DWORD;
 typedef float FLOAT;
 typedef FLOAT *PFLOAT;
 typedef BYTE *PBYTE;

@@ -1,3 +1,4 @@
+#include "binfo.hpp"
 #include <BinaryManager.hpp>
 #include <BinaryManagerNT32.hpp>
 #include <BinaryManagerNT64.hpp>
@@ -21,8 +22,11 @@ namespace binfo {
                 return 1;
             }
 
+            // binfo::win::printDosHeader(dosHeader);
+            // printf("asdasdas %lld\n", sizeof(dosHeader.e_lfanew));
+            // return 0;
             if (binfo::fseek(file, dosHeader.e_lfanew, SEEK_SET) != 0) {
-                printf("Could not seek to PE headerASD\n");
+                printf("Could not seek to PE header\n");
                 printf(
                     "e_magic: %p\n"
                     "e_lfanew: %p\n",

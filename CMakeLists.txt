@@ -33,15 +33,21 @@ set(HEADERS
     include/wintypes.h
 )
 
-# Add the static library target
+# Add the static library target and name it `binfo_lib`
 add_library(binfo_lib STATIC ${SOURCES})
 
-# Add the executable target
+# Ensure the static library is named libbinfo.a on all platforms
+set_target_properties(binfo_lib PROPERTIES OUTPUT_NAME "libbinfo")
+
+# Add the executable target and name it `binfo`
 add_executable(binfo main.cpp)
 
 # Link the static library to the executable
 target_link_libraries(binfo binfo_lib)
 
 # Specify the output directories for the library and executable
-set_target_properties(binfo_lib PROPERTIES ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
-set_target_properties(binfo PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR})
+set_target_properties(binfo_lib PROPERTIES
+    ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
+
+set_target_properties(binfo PROPERTIES
+    RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR})

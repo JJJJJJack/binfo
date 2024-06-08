@@ -3,4 +3,5 @@ build/
 lib/
 main
 *.bat
+*.sh
 **.exe
