@@ -39,7 +39,7 @@ int main(int argc, char **argv) {
     }
 
     if (magicNumber == ELF_MAGIC) {
-        if (binfo::linux::linuxBinfo(file) != 0) {
+        if (binfo::linuxNs::linuxBinfo(file) != 0) {
             if (fclose(file) != 0) {
                 printf("Coud not close file\n");
             }

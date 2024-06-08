@@ -22,7 +22,12 @@ namespace binfo {
             }
 
             if (binfo::fseek(file, dosHeader.e_lfanew, SEEK_SET) != 0) {
-                printf("Could not seek to PE header\n");
+                printf("Could not seek to PE headerASD\n");
+                printf(
+                    "e_magic: %p\n"
+                    "e_lfanew: %p\n",
+                    &dosHeader.e_magic,
+                    &dosHeader.e_lfanew);
                 return 1;
             }
 

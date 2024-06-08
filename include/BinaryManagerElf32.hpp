@@ -9,7 +9,7 @@ class BinaryManager<Elf32_Ehdr> {
     Elf32_Phdr program;
     FILE *file;
 
-    void (*printMachine)(uint16_t machine) = binfo::linux::elfPrintMachine;
+    void (*printMachine)(uint16_t machine) = binfo::linuxNs::elfPrintMachine;
 
   public:
     BinaryManager(FILE *_file, bool *err)

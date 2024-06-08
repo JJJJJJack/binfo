@@ -8,11 +8,11 @@
 #include <cstdio>
 
 namespace binfo {
-    namespace linux {
+    namespace linuxNs {
         int linuxBinfo(FILE *file);
         int checkElfBitness(FILE *file);
         void elfPrintMachine(uint16_t machine);
-    } // namespace linux
+    } // namespace linuxNs
 
     namespace win {
         int winBinfo(FILE *file);

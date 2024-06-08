@@ -1,4 +1,6 @@
 assets/
 build/
 lib/
+main
+*.bat
 **.exe

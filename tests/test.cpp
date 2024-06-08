@@ -34,7 +34,7 @@
 //     }
 
 //     if (magicNumber == ELF_MAGIC) {
-//         switch (binfo::linux::checkElfBitness(&file)) {
+//         switch (binfo::linuxNs::checkElfBitness(&file)) {
 //             case ELFCLASS32:
 //                 binaryManager = std::make_unique<BinaryManager<Elf32_Ehdr>>(file, &err);
 //                 if (err) {

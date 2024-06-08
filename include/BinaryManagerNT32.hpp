@@ -45,8 +45,8 @@ class BinaryManager<IMAGE_DOS_HEADER, IMAGE_NT_HEADERS32> {
 
     void showHeaderInfo() {
         printf("PE ");
-
         printMachine(ntHeaders.FileHeader.Machine);
+        // printf(" %X\n", ntHeaders.FileHeader.);
     }
 
     void showFileInfo() {

@@ -3,7 +3,6 @@
 #include <cstdio>
 #include <winstructs.h>
 
-
 template<>
 class BinaryManager<IMAGE_DOS_HEADER, IMAGE_NT_HEADERS64> {
     IMAGE_DOS_HEADER dosHeader;

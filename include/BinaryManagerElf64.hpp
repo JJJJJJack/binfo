@@ -3,14 +3,13 @@
 #include <cstdio>
 #include <linuxstructs.h>
 
-
 template<>
 class BinaryManager<Elf64_Ehdr> {
     Elf64_Ehdr header;
     Elf64_Phdr program;
     FILE *file;
 
-    void (*printMachine)(uint16_t machine) = binfo::linux::elfPrintMachine;
+    void (*printMachine)(uint16_t machine) = binfo::linuxNs::elfPrintMachine;
 
   public:
     BinaryManager(FILE *_file, bool *err)

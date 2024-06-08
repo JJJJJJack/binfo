@@ -6,7 +6,7 @@ SRCDIR = src
 INCDIR = include
 BUILDDIR = build
 LIBDIR = lib
-LIBNAME = libbinfo.a
+LIBNAME = libbinfo
 EXE = binfo
 
 SRCS = $(wildcard $(SRCDIR)/*.cpp)
@@ -21,11 +21,17 @@ test: $(OBJS) tests/test.cpp
 d: $(OBJS)
 	g++ $(CFLAGS) -g -I$(INCDIR) -o $(EXE) $(OBJS)
 
-lib: $(OBJS)
-	ar rcs $(LIBDIR)/$(LIBNAME) $^
+$(LIBDIR)/$(LIBNAME).a: $(OBJS)
+	ar rcs $(LIBDIR)/$(LIBNAME).a $^
 
-binfo: $(OBJS)
+lib: $(OBJS)
+	ar rcs $(LIBDIR)/$(LIBNAME).a $^
+
+old_binfo: $(OBJS)
 	g++ $(CFLAGS) -I$(INCDIR) -o $(EXE) $(OBJS) main.cpp
 # with lib: g++ -Iinclude main.cpp -Llib -lbinfo -o main
+binfo: $(OBJS) $(LIBDIR)/$(LIBNAME).a
+	g++ $(CFLAGS) -I$(INCDIR) main.cpp -L$(LIBDIR) -lbinfo -o $(EXE)
+
 clean:
-	rm -rf $(BUILDDIR)/*.o $(LIBDIR)/* test.exe test binfo.exe binfo
+	rm -rf $(BUILDDIR)/* $(LIBDIR)/* test.exe test binfo.exe binfo

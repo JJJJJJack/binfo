@@ -6,12 +6,12 @@
 #include <linuxstructs.h>
 
 namespace binfo {
-    namespace linux {
+    namespace linuxNs {
         int linuxBinfo(FILE *file) {
             Executables e;
             bool err = false;
 
-            switch (binfo::linux::checkElfBitness(file)) {
+            switch (binfo::linuxNs::checkElfBitness(file)) {
                 case 0:
                     printf("Invalid ELF class\n");
                     return 0;
@@ -307,5 +307,5 @@ namespace binfo {
                     printf("Unknown machine type ");
             }
         }
-    } // namespace linux
+    } // namespace linuxNs
 } // namespace binfo
