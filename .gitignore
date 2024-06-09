@@ -4,4 +4,6 @@ lib/
 main
 *.bat
 *.sh
+bat
+sh
 **.exe
